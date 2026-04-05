@@ -31,4 +31,5 @@ git commit -m "My first commit"
 git push origin main
 
 ### Create app.py for the deployment
-### Create home.html in the templates folder 
+### Create index.html in the templates folder 
+### Create Procfile for Heroku cloud platform

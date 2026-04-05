@@ -1,6 +1,22 @@
-<h1>
-    Sales Predictions App
-</h1>
-<h2>
-    Hello, welcome to the Sales Predictions App! This application allows you to predict sales based on various features. You can input your data and get insights into future sales trends. Feel free to explore the different functionalities and make the most out of this tool!  
-</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales Predictions App</title>
+</head>
+<body>
+    <h2>Sales Predictions App</h2>
+    <form action="{{url_for('predict')}}" method="post">
+        <!-- Input fields for the features -->
+        <input type="text" name="tv" placeholder="TV Advertising Spend" required><br>
+        <input type="text" name="radio" placeholder="Radio Advertising Spend" required><br>
+        <input type="text" name="newspaper" placeholder="Newspaper Advertising Spend" required><br>
+        <button type="submit">Predict Sales</button>
+    </form>
+    <br>
+    {% if prediction_text is not none %}
+        <h3>The Advertising Prediction is: {{ prediction_text }}</h3>
+    {% endif %}
+</body>
+</html>

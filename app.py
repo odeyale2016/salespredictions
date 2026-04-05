@@ -25,7 +25,16 @@ def predict_api():
     # Render the result on the webpage
     return jsonify({'prediction': prediction[0]})
     #return render_template('index.html', prediction_text='Predicted Sales: {:.2f}'.format(prediction[0]))
-   
+@app.route('/predict', methods=['POST'])
+def predict():
+    # Get the input data from the form
+    input_data = [float(x) for x in request.form.values()]
+    # Convert the input data to a numpy array and reshape it for prediction
+    input_array = np.array(input_data).reshape(1, -1)
+    # Make a prediction using the loaded model
+    prediction = regmodel.predict(input_array)
+    # Render the result on the webpage
+    return render_template('index.html', prediction_text='Predicted Sales: {:.2f}'.format(prediction[0]))   
 
 if __name__ == "__main__":
     app.run(debug=True)     
