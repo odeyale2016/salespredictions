@@ -23,8 +23,12 @@ venv\Scripts\activate
 pip install -r requirements.txt
 
 ### Setup your Github account
-git config --global user.name
-git config --global user.email
+git config --global user.name "Odeyale Kehinde Musiliudeen"
+git config --global user.email "odeyale_kehinde@yahoo.com"
 ### Add files to the repository
 git add .
 git commit -m "My first commit"
+git push origin main
+
+### Create app.py for the deployment
+### Create home.html in the templates folder 
